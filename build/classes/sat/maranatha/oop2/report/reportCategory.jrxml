@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29975b4b-c065-44ff-a0d5-6c04a175013d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     category.`id` AS category_id,
+     category.`name` AS category_name,
+     category.`created` AS category_created,
+     menu.`id` AS menu_id,
+     menu.`name` AS menu_name,
+     menu.`price` AS menu_price,
+     menu.`description` AS menu_description,
+     menu.`recomended` AS menu_recomended,
+     menu.`photo` AS menu_photo,
+     menu.`created` AS menu_created,
+     menu.`category_id` AS menu_category_id
+FROM
+     `category` category INNER JOIN `menu` menu ON category.`id` = menu.`category_id`]]>
+	</queryString>
+	<field name="category_id" class="java.lang.Integer"/>
+	<field name="category_name" class="java.lang.String"/>
+	<field name="category_created" class="java.sql.Timestamp"/>
+	<field name="menu_id" class="java.lang.Integer"/>
+	<field name="menu_name" class="java.lang.String"/>
+	<field name="menu_price" class="java.lang.Double"/>
+	<field name="menu_description" class="java.lang.String"/>
+	<field name="menu_recomended" class="java.lang.Boolean"/>
+	<field name="menu_photo" class="java.lang.String"/>
+	<field name="menu_created" class="java.sql.Timestamp"/>
+	<field name="menu_category_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="236" y="25" width="100" height="20" uuid="96690954-97a3-4adc-b4a8-bd42bf1e9d14"/>
+				<text><![CDATA[Report Category]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="156" y="22" width="100" height="20" uuid="4b825eb9-d895-4bd4-a948-1cbe94a4ce8a"/>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="22" width="100" height="20" uuid="91a66787-5b65-41e9-8a5e-cd3457e0b4aa"/>
+				<text><![CDATA[Menu]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="156" y="12" width="100" height="20" uuid="8e96afcf-e7a7-43ee-a40f-59e5b4cdd408"/>
+				<textFieldExpression><![CDATA[$F{category_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="12" width="100" height="20" uuid="f5ad7ffe-1242-427f-a3d0-990e168d1b4c"/>
+				<textFieldExpression><![CDATA[$F{menu_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

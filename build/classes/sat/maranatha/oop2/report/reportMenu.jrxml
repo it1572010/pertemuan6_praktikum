@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9bb7dea6-7f97-4793-97a3-0195aff455b8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     category.`id` AS category_id,
+     category.`name` AS category_name,
+     category.`created` AS category_created,
+     menu.`id` AS menu_id,
+     menu.`name` AS menu_name,
+     menu.`price` AS menu_price,
+     menu.`description` AS menu_description,
+     menu.`recomended` AS menu_recomended,
+     menu.`photo` AS menu_photo,
+     menu.`created` AS menu_created,
+     menu.`category_id` AS menu_category_id
+FROM
+     `category` category INNER JOIN `menu` menu ON category.`id` = menu.`category_id`]]>
+	</queryString>
+	<field name="category_id" class="java.lang.Integer"/>
+	<field name="category_name" class="java.lang.String"/>
+	<field name="category_created" class="java.sql.Timestamp"/>
+	<field name="menu_id" class="java.lang.Integer"/>
+	<field name="menu_name" class="java.lang.String"/>
+	<field name="menu_price" class="java.lang.Double"/>
+	<field name="menu_description" class="java.lang.String"/>
+	<field name="menu_recomended" class="java.lang.Boolean"/>
+	<field name="menu_photo" class="java.lang.String"/>
+	<field name="menu_created" class="java.sql.Timestamp"/>
+	<field name="menu_category_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="242" y="27" width="100" height="20" uuid="f3df9d2b-e78f-4547-bbe8-e6908d0cb7ff"/>
+				<text><![CDATA[LAPORAN MENU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="74" y="26" width="100" height="20" uuid="103a48e2-cef3-4913-bf6d-7cdd7d056947"/>
+				<text><![CDATA[Menu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="26" width="100" height="20" uuid="bf34d1a6-7f71-4e3d-895e-caa760c9705a"/>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="26" width="100" height="20" uuid="8478169c-784a-46af-8825-2ce962d79bf7"/>
+				<text><![CDATA[Recommended]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="26" width="100" height="20" uuid="550328a3-288e-48f4-a34c-4b20c78d31da"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="74" y="6" width="100" height="20" uuid="f19a8ae3-a342-4e5e-bf5e-81d4171abc57"/>
+				<textFieldExpression><![CDATA[$F{menu_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="6" width="100" height="20" uuid="a6a65e2e-c645-4051-9fd7-47b0feeaa5ec"/>
+				<textFieldExpression><![CDATA[$F{category_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="6" width="100" height="20" uuid="39fb534e-701a-482e-88e5-8ac4866d81fb"/>
+				<textFieldExpression><![CDATA[$F{menu_recomended}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="6" width="100" height="20" uuid="2b1a8630-3e14-4eeb-a390-4b48a38a7079"/>
+				<textFieldExpression><![CDATA[$F{menu_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

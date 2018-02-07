@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="pertemuan6_praktikum.jnlp">
+  <information>
+    <title>pertemuan6_praktikum</title>
+    <vendor>Win10</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\commons-beanutils-1.8.3.jar" size="232019" download="eager" />
+    <jar href="lib\commons-digester-1.8.jar" size="143602" download="eager" />
+    <jar href="lib\commons-logging-1.1.2.jar" size="62051" download="eager" />
+    <jar href="lib\commons-validator-1.4.0.jar" size="176897" download="eager" />
+    <jar href="lib\commons.collections-3.2.1.jar" size="582765" download="eager" />
+    <jar href="lib\groovy-all.jar" size="6942386" download="eager" />
+    <jar href="lib\jasperreports-5.6.0.jar" size="4989676" download="eager" />
+    <jar href="lib\jcommon.jar" size="290574" download="eager" />
+    <jar href="lib\jfreechart-1.0.12.jar" size="1368681" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="pertemuan6_praktikum.jar" size="43004" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="pertemuan6_praktikum" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="sat.maranatha.oop2.mainApp"  name="pertemuan6_praktikum" />
+  <update check="always"/>
+</jnlp>
